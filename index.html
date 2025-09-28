@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Interaktif Kimia: Seramik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom styles for the active tab */
+        .tab-active {
+            background-color: #ec4899; /* pink-500 */
+            color: white;
+            border-bottom: 4px solid #3b82f6; /* blue-500 */
+        }
+        .tab-inactive {
+            background-color: #bfdbfe; /* blue-200 */
+            color: #1e3a8a; /* blue-800 */
+        }
+        /* Speech bubble style */
+        .bubble {
+            position: relative;
+            background: #dbeafe; /* blue-100 */
+            border-radius: .4em;
+            padding: 1rem;
+        }
+        .bubble-right:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-left-color: #dbeafe; /* blue-100 */
+            border-right: 0;
+            border-bottom: 0;
+            margin-top: -10px;
+            margin-right: -20px;
+        }
+        .bubble-pink {
+            background: #fce7f3; /* pink-100 */
+        }
+        .bubble-left.bubble-pink:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-right-color: #fce7f3; /* pink-100 */
+            border-left: 0;
+            border-bottom: 0;
+            margin-top: -10px;
+            margin-left: -20px;
+        }
+        /* Hide sections by default */
+        .content-section {
+            display: none;
+        }
+        /* Show the active section */
+        .content-active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-800">
+
+    <div class="container mx-auto p-4 max-w-7xl">
+        <!-- Header -->
+        <header class="text-center p-6 bg-white rounded-lg shadow-lg border-4 border-pink-300 mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-800">Kimia Tingkatan 4 & 5</h1>
+            <p class="text-xl text-pink-600 mt-2">Tajuk: Komposisi Seramik dan Kegunaannya</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="flex justify-center flex-wrap gap-2 md:gap-4 mb-6" id="nav-tabs">
+            <button data-target="nota" class="tab-button text-lg font-semibold py-3 px-6 rounded-t-lg transition-all duration-300 tab-active">Nota Komik</button>
+            <button data-target="simulasi" class="tab-button text-lg font-semibold py-3 px-6 rounded-t-lg transition-all duration-300 tab-inactive">Simulasi</button>
+            <button data-target="latih-tubi" class="tab-button text-lg font-semibold py-3 px-6 rounded-t-lg transition-all duration-300 tab-inactive">Latih Tubi</button>
+            <button data-target="kuiz" class="tab-button text-lg font-semibold py-3 px-6 rounded-t-lg transition-all duration-300 tab-inactive">Kuiz</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="content-container" class="bg-white p-6 rounded-lg shadow-lg border-2 border-blue-200 min-h-[60vh]">
+            
+            <!-- Section 1: Nota Komik (IMPROVED WITH HIGHLIGHTS) -->
+            <section id="nota" class="content-section content-active">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4 border-b-4 border-blue-300 pb-2">Jom Terokai Dunia Seramik!</h2>
+                <div class="space-y-8">
+                    <!-- Panel 1 -->
+                    <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="flex flex-col items-center">
+                            <img src="https://placehold.co/150x150/60A5FA/FFFFFF?text=Aiman" alt="Aiman" class="rounded-full">
+                            <p class="font-bold mt-2">Aiman</p>
+                        </div>
+                        <div class="md:col-span-2 bubble bubble-left bubble-pink">
+                            Cikgu, apa sebenarnya seramik tu? Saya cuma tahu pinggan di rumah saya dibuat daripada seramik. Adakah itu betul?
+                        </div>
+                    </div>
+                    <!-- Panel 2 -->
+                    <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="md:col-span-2 bubble bubble-right">
+                           Betul tu Aiman! Secara amnya, seramik ialah <span class="font-bold bg-pink-200 px-2 py-1 rounded">pepejal bukan organik dan bukan logam</span>. Ia terhasil daripada sebatian antara unsur logam dengan unsur bukan logam. Bahan mentahnya diproses dan dikeraskan melalui <span class="font-bold bg-pink-200 px-2 py-1 rounded">pembakaran pada suhu yang sangat tinggi</span>.
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://placehold.co/150x150/F472B6/FFFFFF?text=Cikgu+Ayu" alt="Cikgu Ayu" class="rounded-full">
+                            <p class="font-bold mt-2">Cikgu Ayu</p>
+                        </div>
+                    </div>
+                    <!-- Panel 3 -->
+                     <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="flex flex-col items-center">
+                            <img src="https://placehold.co/150x150/818CF8/FFFFFF?text=Bella" alt="Bella" class="rounded-full">
+                            <p class="font-bold mt-2">Bella</p>
+                        </div>
+                        <div class="md:col-span-2 bubble bubble-left bubble-pink">
+                            Oh, jadi apa bahan-bahan utama untuk membuat seramik tradisional seperti pinggan dan jubin tu, cikgu?
+                        </div>
+                    </div>
+                    <!-- Panel 4 (IMPROVED) -->
+                    <div class="bg-blue-100 p-6 rounded-lg shadow-inner border-l-4 border-blue-500">
+                        <h3 class="font-bold text-xl text-blue-800 mb-3">Komposisi & Peranan Bahan Mentah Utama:</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-3 rounded-md shadow-sm">
+                                <p><span class="font-bold text-pink-600">Tanah liat (Kaolin):</span> Bertindak sebagai bahan utama yang membolehkan campuran dibentuk dengan mudah kerana bersifat <mark class="bg-pink-200 rounded px-2 py-1 font-semibold">plastik</mark>.</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-md shadow-sm">
+                                <p><span class="font-bold text-pink-600">Silika (Pasir):</span> Berfungsi sebagai <mark class="bg-pink-200 rounded px-2 py-1 font-semibold">pengisi</mark> untuk mengurangkan pengecutan dan meningkatkan kekuatan.</p>
+                            </div>
+                             <div class="bg-white p-3 rounded-md shadow-sm">
+                                <p><span class="font-bold text-pink-600">Feldspar:</span> Bertindak sebagai <mark class="bg-pink-200 rounded px-2 py-1 font-semibold">fluks</mark> (agen pelebur) yang mengikat zarah-zarah lain bersama semasa pembakaran.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Panel 5 & 6 -->
+                    <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="md:col-span-2 bubble bubble-right">
+                           Tepat sekali! Gabungan ketiga-tiga bahan ini dan cara ia diproses menghasilkan sifat-sifat unik seramik.
+                        </div>
+                         <div class="flex flex-col items-center">
+                            <img src="https://placehold.co/150x150/F472B6/FFFFFF?text=Cikgu+Ayu" alt="Cikgu Ayu" class="rounded-full">
+                            <p class="font-bold mt-2">Cikgu Ayu</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="flex flex-col items-center">
+                            <img src="https://placehold.co/150x150/60A5FA/FFFFFF?text=Aiman" alt="Aiman" class="rounded-full">
+                            <p class="font-bold mt-2">Aiman</p>
+                        </div>
+                        <div class="md:col-span-2 bubble bubble-left bubble-pink">
+                            Cikgu, kenapa seramik sangat keras tapi pada masa yang sama rapuh dan mudah pecah? Dan kenapa ia tak alirkan elektrik?
+                        </div>
+                    </div>
+                    <!-- Panel 7 (IMPROVED) -->
+                    <div class="bg-pink-100 p-6 rounded-lg shadow-inner border-l-4 border-pink-500">
+                        <h3 class="font-bold text-xl text-pink-800 mb-4">Punca Sifat-Sifat Seramik</h3>
+                        <p class="mb-4">Semua sifat seramik berpunca daripada strukturnya yang mempunyai <span class="font-bold bg-blue-200 px-2 py-1 rounded">ikatan ionik dan kovalen yang sangat kuat</span> dalam <span class="font-bold bg-blue-200 px-2 py-1 rounded">struktur kekisi raksasa</span>.</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg><div><h4 class="font-bold text-blue-800">Sangat Keras & Kuat</h4><p class="text-sm">Tenaga yang sangat besar diperlukan untuk memutuskan ikatan yang kuat.</p></div></div>
+                            <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m6 10v4m-2-2h4M12 3v18" /></svg><div><h4 class="font-bold text-blue-800">Rapuh</h4><p class="text-sm">Lapisan zarah tidak dapat menggelongsor, menyebabkan struktur pecah apabila dikenakan daya.</p></div></div>
+                            <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A8.003 8.003 0 0122 12c0 3-1 7-6.343 6.657z" /></svg><div><h4 class="font-bold text-blue-800">Rintangan Haba Tinggi</h4><p class="text-sm">Banyak tenaga haba diperlukan untuk mengatasi daya ikatan yang kuat antara zarah.</p></div></div>
+                            <div class="bg-white p-4 rounded-lg shadow flex items-start space-x-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg><div><h4 class="font-bold text-blue-800">Lengai & Penebat</h4><p class="text-sm">Tiada elektron bebas untuk mengalirkan elektrik atau memindahkan haba dengan cekap.</p></div></div>
+                        </div>
+                    </div>
+                     <!-- Panel 8 & 9 -->
+                    <div class="grid md:grid-cols-3 gap-4 items-center">
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/150x150/818CF8/FFFFFF?text=Bella" alt="Bella" class="rounded-full"><p class="font-bold mt-2">Bella</p></div>
+                        <div class="md:col-span-2 bubble bubble-left bubble-pink">Wah, hebatnya! Adakah semua seramik diperbuat daripada tanah liat? Macam mana pula dengan komponen enjin jet atau disk brek kereta lumba?</div>
+                    </div>
+                    <div class="bg-blue-100 p-6 rounded-lg shadow-inner border-l-4 border-blue-500">
+                        <h3 class="font-bold text-xl text-blue-800 mb-2">Seramik Tradisional lwn. Seramik Termaju</h3>
+                        <p class="mb-4">Soalan yang sangat baik, Bella! Di sinilah kita perlu bezakan antara dua jenis seramik:</p>
+                         <div class="grid md:grid-cols-2 gap-6 mt-2">
+                            <div class="bg-white p-4 rounded-lg shadow transform hover:scale-105 transition-transform duration-300">
+                                <h4 class="font-bold text-lg text-pink-700">Seramik Tradisional</h4>
+                                <p class="text-sm mt-1">Berasaskan <mark class="bg-pink-200 rounded px-1">tanah liat (kaolin)</mark>. Digunakan dalam pembuatan bata, tembikar, dan jubin.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow transform hover:scale-105 transition-transform duration-300">
+                                <h4 class="font-bold text-lg text-blue-700">Seramik Termaju</h4>
+                                <p class="text-sm mt-1">Diperbuat daripada <mark class="bg-blue-200 rounded px-1">sebatian tulen</mark> seperti oksida & karbida. Sifatnya jauh lebih baik.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Panel 10 - Kegunaan with Visuals -->
+                    <div class="bg-pink-50 p-6 rounded-lg border-2 border-pink-200">
+                         <h3 class="font-bold text-2xl text-pink-800 mb-6 text-center">Aplikasi Seramik Berdasarkan Sifatnya</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-semibold text-xl text-blue-800 mb-3 border-b-2 border-blue-200 pb-2">Keras & Tahan Haus</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/QvmtpVbt/gigi-palsu.jpg" alt="Gigi Palsu" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Gigi Palsu</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/YFfYPzCT/cakera-pemotong.jpg" alt="Mata Alat Pemotong" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Mata Alat Pemotong</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/WWxRTWZ7/disk-brek.jpg" alt="Disk Brek Kereta" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Disk Brek Kereta</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/QFWb9Hbb/enjin-bilah-turbin.png" alt="Bilah Enjin Turbin" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Bilah Enjin Turbin</span></div>
+                                </div>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-xl text-blue-800 mb-3 border-b-2 border-blue-200 pb-2">Rintangan Haba Tinggi</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/zT9tjrFJ/relau-bagas.jpg" alt="Lapisan Relau" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Lapisan Relau</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/TxsSgMpH/jubin-penebat-haba.jpg" alt="Jubin Penebat Haba" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Jubin Penebat Haba</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/pBF9zwns/mangkuk-pijar.jpg" alt="Mangkuk Pijar" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Mangkuk Pijar</span></div>
+                                </div>
+                            </div>
+                             <div>
+                                <h4 class="font-semibold text-xl text-blue-800 mb-3 border-b-2 border-blue-200 pb-2">Penebat Elektrik & Lengai Kimia</h4>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                     <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/GQFGyttK/penebat-elektrik.jpg" alt="Penebat Elektrik" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Penebat Elektrik</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/HDHMbmBT/papan-mikrocip.png" alt="Papan Mikrocip" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Papan Mikrocip</span></div>
+                                    <div class="bg-white p-3 rounded-lg shadow"><img src="https://i.ibb.co/wZSC79jv/tulang-lutut.png" alt="Sendi Tiruan" class="mx-auto rounded mb-2 h-20 w-auto object-cover"><span class="font-semibold">Sendi Tiruan</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Simulasi -->
+            <section id="simulasi" class="content-section">
+                <h2 class="text-3xl font-bold text-pink-600 mb-4 border-b-4 border-blue-300 pb-2">Simulasi Penghasilan Seramik</h2>
+                <div class="text-center">
+                    <p class="mb-6 text-lg">Klik pada bahan mentah untuk memulakan proses penghasilan seramik!</p>
+                    <div class="grid md:grid-cols-3 gap-6 items-center">
+                        <!-- Bahan Mentah -->
+                        <div id="bahan-mentah" class="space-y-4">
+                            <button onclick="pilihBahan('Tanah Liat')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">1. Tanah Liat (Kaolin)</button>
+                            <button onclick="pilihBahan('Silika')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">2. Silika (Pasir)</button>
+                            <button onclick="pilihBahan('Feldspar')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105">3. Feldspar</button>
+                        </div>
+                        <!-- Proses -->
+                        <div class="flex justify-center items-center text-5xl text-pink-500 font-bold">
+                           &rarr;
+                        </div>
+                        <!-- Produk -->
+                        <div id="proses-seramik" class="bg-blue-100 border-4 border-dashed border-blue-300 rounded-lg p-6 min-h-[250px] flex flex-col justify-center items-center">
+                            <p id="status-simulasi" class="text-blue-800 text-lg">Pilih 3 bahan mentah untuk dicampurkan.</p>
+                            <div id="hasil-simulasi" class="hidden text-center mt-4">
+                                <svg class="w-24 h-24 text-pink-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path><path d="M2 12h2a8 8 0 0116 0h2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M12 2v2a8 8 0 010 16v2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                <p class="font-bold text-2xl text-blue-800 mt-2">Jubin Seramik Terhasil!</p>
+                                <p class="text-gray-600">Campuran dibakar pada suhu tinggi untuk menghasilkan produk yang keras dan tahan lasak.</p>
+                                <button onclick="resetSimulasi()" class="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added YouTube Video -->
+                <div class="mt-12 pt-6 border-t-4 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 text-center">Tonton Video Proses Sebenar!</h3>
+                    <div class="relative w-full overflow-hidden" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/A6PBbJv7Xjk?si=YIT5KFfpCzdL2Cx9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Latih Tubi -->
+            <section id="latih-tubi" class="content-section">
+                <h2 class="text-3xl font-bold text-pink-600 mb-6 border-b-4 border-blue-300 pb-2">Pilih Latih Tubi Anda!</h2>
+                
+                <!-- Game Selection -->
+                <div id="latih-tubi-selection" class="grid md:grid-cols-2 gap-6 text-center">
+                    <!-- Game 1: Padanan Sifat -->
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-lg border-2 border-blue-200">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-2">Permainan 1</h3>
+                        <p class="text-3xl font-semibold text-pink-600 mb-4">Padanan Sifat</p>
+                        <p class="mb-6 min-h-[50px]">Padankan gambar aplikasi seramik dengan sifat utamanya.</p>
+                        <button onclick="startGame('padanan-sifat')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Mula!</button>
+                    </div>
+                    <!-- Game 2: Teka Bahan -->
+                    <div class="bg-pink-50 p-6 rounded-lg shadow-lg border-2 border-pink-200">
+                        <h3 class="text-2xl font-bold text-pink-800 mb-2">Permainan 2</h3>
+                        <p class="text-3xl font-semibold text-blue-600 mb-4">Teka Bahan & Sifat</p>
+                        <p class="mb-6 min-h-[50px]">Baca klu dan taip jawapan yang betul di dalam kotak.</p>
+                        <button onclick="startGame('teka-bahan')" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Mula!</button>
+                    </div>
+                </div>
+
+                <!-- Game Container 1: Padanan Sifat -->
+                <div id="padanan-sifat-game" class="hidden bg-blue-50 p-6 rounded-lg shadow text-center">
+                    <p class="text-xl font-semibold text-blue-800 mb-4">Padankan gambar aplikasi seramik dengan sifat utamanya.</p>
+                    <div id="lt-image-container" class="mb-6 flex justify-center items-center bg-white p-4 rounded-lg border-2 border-dashed border-pink-300 h-52">
+                        <img id="lt-image" src="" alt="Aplikasi Seramik" class="max-h-48 w-auto rounded">
+                    </div>
+                    <div id="lt-options-container" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+                    <div id="lt-feedback" class="mt-6 font-bold text-2xl min-h-[40px]"></div>
+                    <button id="lt-next-btn" class="hidden mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg text-lg">Seterusnya</button>
+                    <button onclick="backToSelection()" class="mt-4 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg">Kembali</button>
+                </div>
+
+                <!-- Game Container 2: Teka Bahan -->
+                <div id="teka-bahan-game" class="hidden bg-pink-50 p-6 rounded-lg shadow text-center">
+                    <p class="text-xl font-semibold text-pink-800 mb-4">Baca klu dan taip jawapan anda.</p>
+                    <div id="tb-question" class="bg-white p-4 rounded-lg border-2 border-blue-300 min-h-[100px] flex items-center justify-center text-xl font-medium mb-6"></div>
+                    <input type="text" id="tb-input" class="w-full md:w-1/2 p-3 border-2 border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Taip jawapan di sini...">
+                    <button id="tb-check-btn" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg">Semak Jawapan</button>
+                    <div id="tb-feedback" class="mt-6 font-bold text-2xl min-h-[40px]"></div>
+                    <button id="tb-next-btn" class="hidden mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-lg text-lg">Seterusnya</button>
+                     <button onclick="backToSelection()" class="mt-4 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg">Kembali</button>
+                </div>
+
+            </section>
+
+            <!-- Section 4: Kuiz -->
+            <section id="kuiz" class="content-section">
+                 <div id="kuiz-container">
+                    <h2 class="text-3xl font-bold text-pink-600 mb-4 border-b-4 border-blue-300 pb-2">Kuiz Pengukuhan Seramik</h2>
+                    <div id="quiz-start" class="text-center">
+                        <p class="text-lg mb-4">Uji kefahaman anda tentang topik seramik. Terdapat 20 soalan dalam kuiz ini.</p>
+                        <p class="mb-6">Soalan dan jawapan akan dirawak setiap kali anda memulakan kuiz.</p>
+                        <button id="start-quiz-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-xl shadow-lg transition-transform transform hover:scale-105">Mulakan Kuiz!</button>
+                    </div>
+                    
+                    <div id="quiz-area" class="hidden">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xl font-bold text-blue-800">Soalan <span id="question-number"></span> dari 20</p>
+                            <p class="text-lg font-semibold text-pink-600">Skor: <span id="score">0</span></p>
+                        </div>
+                        <p id="question-text" class="text-2xl font-semibold mb-6 min-h-[100px]"></p>
+                        <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Options will be dynamically inserted here -->
+                        </div>
+                        <div id="feedback-area" class="mt-4 text-center"></div>
+                        <button id="next-question-btn" class="hidden mt-6 w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg text-lg">Soalan Seterusnya</button>
+                    </div>
+
+                    <div id="quiz-results" class="hidden text-center">
+                        <h3 class="text-4xl font-bold text-blue-800 mb-4">Tahniah! Kuiz Selesai.</h3>
+                        <div class="bg-blue-100 p-8 rounded-lg inline-block shadow-md">
+                            <p class="text-2xl text-pink-600 mb-2">Skor Akhir Anda:</p>
+                            <p id="final-score" class="text-6xl font-bold text-blue-800"></p>
+                        </div>
+                        <p id="result-message" class="text-xl mt-4 font-semibold"></p>
+                        <button id="retry-quiz-btn" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-xl shadow-lg transition-transform transform hover:scale-105">Cuba Semula</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Tab Navigation Logic
+        const navTabs = document.getElementById('nav-tabs');
+        const contentContainer = document.getElementById('content-container');
+        const contentSections = contentContainer.querySelectorAll('.content-section');
+        const tabButtons = navTabs.querySelectorAll('.tab-button');
+
+        navTabs.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-button')) {
+                const targetId = e.target.dataset.target;
+
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                });
+                e.target.classList.add('tab-active');
+                e.target.classList.remove('tab-inactive');
+
+                contentSections.forEach(section => {
+                    section.classList.remove('content-active');
+                    if (section.id === targetId) {
+                        section.classList.add('content-active');
+                    }
+                });
+            }
+        });
+
+        // Simulasi Logic
+        let bahanTerpilih = [];
+        const statusSimulasi = document.getElementById('status-simulasi');
+        const hasilSimulasi = document.getElementById('hasil-simulasi');
+        const bahanMentahDiv = document.getElementById('bahan-mentah');
+
+        function pilihBahan(bahan) {
+            if (!bahanTerpilih.includes(bahan)) {
+                bahanTerpilih.push(bahan);
+                statusSimulasi.textContent = `Bahan ditambah: ${bahanTerpilih.join(', ')}.`;
+                
+                const buttons = bahanMentahDiv.getElementsByTagName('button');
+                for (let btn of buttons) {
+                    if (btn.textContent.includes(bahan)) {
+                        btn.disabled = true;
+                        btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                }
+            }
+            if (bahanTerpilih.length === 3) {
+                statusSimulasi.classList.add('hidden');
+                hasilSimulasi.classList.remove('hidden');
+            }
+        }
+
+        function resetSimulasi() {
+            bahanTerpilih = [];
+            statusSimulasi.textContent = 'Pilih 3 bahan mentah untuk dicampurkan.';
+            statusSimulasi.classList.remove('hidden');
+            hasilSimulasi.classList.add('hidden');
+
+            const buttons = bahanMentahDiv.getElementsByTagName('button');
+            for (let btn of buttons) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // Shared shuffle function
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        // --- Latih Tubi Main Logic ---
+        const ltSelection = document.getElementById('latih-tubi-selection');
+        const padananSifatGame = document.getElementById('padanan-sifat-game');
+        const tekaBahanGame = document.getElementById('teka-bahan-game');
+
+        function startGame(gameType) {
+            ltSelection.classList.add('hidden');
+            if (gameType === 'padanan-sifat') {
+                padananSifatGame.classList.remove('hidden');
+                startLatihTubi();
+            } else if (gameType === 'teka-bahan') {
+                tekaBahanGame.classList.remove('hidden');
+                startTekaBahan();
+            }
+        }
+
+        function backToSelection() {
+            padananSifatGame.classList.add('hidden');
+            tekaBahanGame.classList.add('hidden');
+            ltSelection.classList.remove('hidden');
+        }
+
+        // --- Game 1: Padanan Sifat Logic ---
+        const ltImage = document.getElementById('lt-image');
+        const ltOptionsContainer = document.getElementById('lt-options-container');
+        const ltFeedback = document.getElementById('lt-feedback');
+        const ltNextBtn = document.getElementById('lt-next-btn');
+
+        const latihTubiData = [
+            { image: 'https://i.ibb.co/pBF9zwns/mangkuk-pijar.jpg', correctAnswer: 'Rintangan Haba Tinggi', options: ['Keras & Tahan Haus', 'Rintangan Haba Tinggi', 'Penebat Elektrik'] },
+            { image: 'https://i.ibb.co/WWxRTWZ7/disk-brek.jpg', correctAnswer: 'Keras & Tahan Haus', options: ['Keras & Tahan Haus', 'Lengai Kimia', 'Rintangan Haba Tinggi'] },
+            { image: 'https://i.ibb.co/wZSC79jv/tulang-lutut.png', correctAnswer: 'Lengai Kimia', options: ['Rintangan Haba Tinggi', 'Penebat Elektrik', 'Lengai Kimia'] },
+            { image: 'https://i.ibb.co/GQFGyttK/penebat-elektrik.jpg', correctAnswer: 'Penebat Elektrik', options: ['Penebat Elektrik', 'Keras & Tahan Haus', 'Lengai Kimia'] },
+            { image: 'https://i.ibb.co/YFfYPzCT/cakera-pemotong.jpg', correctAnswer: 'Keras & Tahan Haus', options: ['Rintangan Haba Tinggi', 'Keras & Tahan Haus', 'Lengai Kimia']},
+            { image: 'https://i.ibb.co/QvmtpVbt/gigi-palsu.jpg', correctAnswer: 'Keras & Tahan Haus', options: ['Keras & Tahan Haus', 'Penebat Elektrik', 'Lengai Kimia'] },
+            { image: 'https://i.ibb.co/QFWb9Hbb/enjin-bilah-turbin.png', correctAnswer: 'Rintangan Haba Tinggi', options: ['Penebat Elektrik', 'Rintangan Haba Tinggi', 'Lengai Kimia'] },
+            { image: 'https://i.ibb.co/zT9tjrFJ/relau-bagas.jpg', correctAnswer: 'Rintangan Haba Tinggi', options: ['Keras & Tahan Haus', 'Rintangan Haba Tinggi', 'Penebat Elektrik'] },
+            { image: 'https://i.ibb.co/TxsSgMpH/jubin-penebat-haba.jpg', correctAnswer: 'Rintangan Haba Tinggi', options: ['Rintangan Haba Tinggi', 'Lengai Kimia', 'Keras & Tahan Haus'] },
+            { image: 'https://i.ibb.co/HDHMbmBT/papan-mikrocip.png', correctAnswer: 'Penebat Elektrik', options: ['Penebat Elektrik', 'Keras & Tahan Haus', 'Rintangan Haba Tinggi'] }
+        ];
+
+        let shuffledLatihTubi, currentLatihTubiIndex;
+
+        function startLatihTubi() {
+            shuffledLatihTubi = shuffleArray([...latihTubiData]);
+            currentLatihTubiIndex = 0;
+            showLatihTubiQuestion();
+        }
+
+        function showLatihTubiQuestion() {
+            resetLatihTubiState();
+            const currentQuestion = shuffledLatihTubi[currentLatihTubiIndex];
+            ltImage.src = currentQuestion.image;
+            
+            const shuffledOptions = shuffleArray([...currentQuestion.options]);
+            shuffledOptions.forEach(option => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('w-full', 'bg-white', 'p-4', 'rounded-lg', 'border-2', 'border-blue-300', 'hover:bg-blue-100', 'font-semibold', 'transition-all');
+                button.addEventListener('click', selectLatihTubiAnswer);
+                ltOptionsContainer.appendChild(button);
+            });
+        }
+
+        function resetLatihTubiState() {
+            ltNextBtn.classList.add('hidden');
+            ltFeedback.innerHTML = '';
+            while (ltOptionsContainer.firstChild) {
+                ltOptionsContainer.removeChild(ltOptionsContainer.firstChild);
+            }
+        }
+
+        function selectLatihTubiAnswer(e) {
+            const selectedBtn = e.target;
+            const correctAnswer = shuffledLatihTubi[currentLatihTubiIndex].correctAnswer;
+            
+            if (selectedBtn.innerText === correctAnswer) {
+                ltFeedback.innerHTML = '<span class="text-green-600">Hebat! Jawapan anda tepat. ✨</span>';
+            } else {
+                ltFeedback.innerHTML = `<span class="text-red-600">Hampir tepat! Sifat utamanya ialah ${correctAnswer}.</span>`;
+            }
+
+            Array.from(ltOptionsContainer.children).forEach(button => {
+                button.disabled = true;
+                if (button.innerText === correctAnswer) {
+                    button.classList.remove('bg-white', 'hover:bg-blue-100');
+                    button.classList.add('bg-green-200', 'border-green-500');
+                } else {
+                    button.classList.add('opacity-50');
+                }
+            });
+
+            ltNextBtn.classList.remove('hidden');
+        }
+
+        ltNextBtn.addEventListener('click', () => {
+            currentLatihTubiIndex++;
+            if (currentLatihTubiIndex >= shuffledLatihTubi.length) {
+                currentLatihTubiIndex = 0; // Loop back to the start
+            }
+            showLatihTubiQuestion();
+        });
+
+        // --- Game 2: Teka Bahan Logic ---
+        const tbQuestion = document.getElementById('tb-question');
+        const tbInput = document.getElementById('tb-input');
+        const tbCheckBtn = document.getElementById('tb-check-btn');
+        const tbFeedback = document.getElementById('tb-feedback');
+        const tbNextBtn = document.getElementById('tb-next-btn');
+
+        const tekaBahanData = [
+            { clue: 'Bahan utama seramik tradisional yang menjadikannya bersifat plastik apabila basah.', answer: ['kaolin', 'tanah liat'] },
+            { clue: 'Bahan ini bertindak sebagai fluks atau agen pelebur dalam seramik tradisional.', answer: ['feldspar'] },
+            { clue: 'Bahan ini ditambah untuk mengurangkan pengecutan semasa pengeringan dan meningkatkan kekuatan seramik.', answer: ['silika', 'pasir'] },
+            { clue: 'Sifat seramik yang membolehkannya menahan suhu yang sangat tinggi.', answer: ['rintangan haba tinggi', 'rintangan haba'] },
+            { clue: 'Seramik tidak mengalirkan elektrik. Sifat ini dipanggil...', answer: ['penebat elektrik', 'penebat'] },
+            { clue: 'Jenis seramik yang diperbuat daripada sebatian tulen seperti oksida dan karbida.', answer: ['seramik termaju', 'termaju'] },
+            { clue: 'Sifat seramik yang menyebabkannya mudah pecah apabila dikenakan hentakan.', answer: ['rapuh'] },
+            { clue: 'Sifat seramik yang tidak bertindak balas dengan bahan kimia lain, sesuai untuk implan tulang.', answer: ['lengai kimia', 'lengai'] }
+        ];
+
+        let shuffledTekaBahan, currentTekaBahanIndex;
+
+        function startTekaBahan() {
+            shuffledTekaBahan = shuffleArray([...tekaBahanData]);
+            currentTekaBahanIndex = 0;
+            showTekaBahanQuestion();
+        }
+
+        function showTekaBahanQuestion() {
+            resetTekaBahanState();
+            const currentQuestion = shuffledTekaBahan[currentTekaBahanIndex];
+            tbQuestion.textContent = currentQuestion.clue;
+        }
+
+        function resetTekaBahanState() {
+            tbInput.value = '';
+            tbInput.disabled = false;
+            tbCheckBtn.disabled = false;
+            tbFeedback.innerHTML = '';
+            tbNextBtn.classList.add('hidden');
+        }
+
+        function checkTekaBahanAnswer() {
+            const userAnswer = tbInput.value.trim().toLowerCase();
+            const correctAnswers = shuffledTekaBahan[currentTekaBahanIndex].answer;
+
+            if (correctAnswers.includes(userAnswer)) {
+                tbFeedback.innerHTML = '<span class="text-green-600">Betul! Jawapan yang bijak! 👍</span>';
+            } else {
+                tbFeedback.innerHTML = `<span class="text-red-600">Jawapan kurang tepat. Jawapan betul ialah: ${correctAnswers[0].charAt(0).toUpperCase() + correctAnswers[0].slice(1)}</span>`;
+            }
+
+            tbInput.disabled = true;
+            tbCheckBtn.disabled = true;
+            tbNextBtn.classList.remove('hidden');
+        }
+
+        tbCheckBtn.addEventListener('click', checkTekaBahanAnswer);
+        tbInput.addEventListener('keyup', function(event) {
+            if (event.key === "Enter") {
+                checkTekaBahanAnswer();
+            }
+        });
+
+        tbNextBtn.addEventListener('click', () => {
+            currentTekaBahanIndex++;
+            if (currentTekaBahanIndex >= shuffledTekaBahan.length) {
+                currentTekaBahanIndex = 0; // Loop
+            }
+            showTekaBahanQuestion();
+        });
+
+        // Quiz Logic
+        const quizData = [
+            { question: "Apakah komponen utama dalam seramik tradisional?", options: ["Kaolin", "Silikon karbida", "Bauksit", "Kuprum(II) oksida"], answer: "Kaolin" },
+            { question: "Proses pemanasan sebatian seramik pada suhu tinggi dipanggil...", options: ["Pemejalwapan", "Penyinteran", "Pendehidratan", "Penyejatan"], answer: "Penyinteran" },
+            { question: "Antara berikut, yang manakah sifat seramik?", options: ["Mudah dibentuk pada suhu bilik", "Tahan haba yang sangat tinggi", "Mengkonduksi elektrik", "Bertindak balas dengan asid"], answer: "Tahan haba yang sangat tinggi" },
+            { question: "Mengapakah seramik digunakan sebagai penebat elektrik dalam palam pencucuh?", options: ["Kerana ia tidak mengalirkan arus elektrik", "Kerana ia murah", "Kerana ia lutsinar", "Kerana ia boleh ditempa"], answer: "Kerana ia tidak mengalirkan arus elektrik" },
+            { question: "Yang manakah contoh seramik termaju?", options: ["Tembikar", "Porselin", "Silikon karbida", "Tanah liat"], answer: "Silikon karbida" },
+            { question: "Sifat 'rapuh' bagi seramik bermaksud ia...", options: ["Kuat menahan mampatan", "Mudah pecah apabila dikenakan hentakan", "Lembap dan lembut", "Boleh diregangkan"], answer: "Mudah pecah apabila dikenakan hentakan" },
+            { question: "Apakah kegunaan titanium karbida, sejenis seramik termaju?", options: ["Membuat pinggan", "Membuat mata alat pemotong", "Membuat pasu bunga", "Membuat atap rumah"], answer: "Membuat mata alat pemotong" },
+            { question: "Formula kimia bagi kaolin ialah...", options: ["SiO₂", "Al₂O₃", "Al₂O₃·2SiO₂·2H₂O", "CaCO₃"], answer: "Al₂O₃·2SiO₂·2H₂O" },
+            { question: "Seramik mempunyai takat lebur yang...", options: ["Rendah", "Sangat tinggi", "Sederhana", "Berubah-ubah"], answer: "Sangat tinggi" },
+            { question: "Antara berikut, yang manakah BUKAN produk seramik?", options: ["Mangkuk tandas", "Jubin lantai", "Gigi palsu", "Paip PVC"], answer: "Paip PVC" },
+            { question: "Sifat lengai secara kimia bermaksud seramik...", options: ["Tidak bertindak balas dengan bahan kimia lain", "Mudah terbakar", "Larut dalam air", "Berbau wangi"], answer: "Tidak bertindak balas dengan bahan kimia lain" },
+            { question: "Apakah fungsi feldspar ditambah ke dalam campuran seramik?", options: ["Untuk mewarnakannya", "Untuk merendahkan takat lebur campuran", "Untuk menjadikannya lebih rapuh", "Untuk meningkatkan kekonduksian elektrik"], answer: "Untuk merendahkan takat lebur campuran" },
+            { question: "Seramik termaju diperbuat daripada sebatian bukan organik seperti...", options: ["Oksida, karbida, nitrida", "Garam, air, gula", "Plastik, getah, gentian", "Protein, lemak, karbohidrat"], answer: "Oksida, karbida, nitrida" },
+            { question: "Mengapakah mangkuk pijar di dalam makmal diperbuat daripada seramik?", options: ["Supaya ia kelihatan cantik", "Kerana ia tahan pemanasan pada suhu yang sangat tinggi", "Kerana ia ringan", "Kerana ia mudah pecah"], answer: "Kerana ia tahan pemanasan pada suhu yang sangat tinggi" },
+            { question: "Disk brek bagi kereta lumba sering diperbuat daripada seramik kerana...", options: ["Ia tahan kepada geseran dan haba yang tinggi", "Ia lebih murah daripada logam", "Ia memberikan warna yang menarik", "Ia tidak memerlukan penyelenggaraan"], answer: "Ia tahan kepada geseran dan haba yang tinggi" },
+            { question: "Seramik adalah bahan...", options: ["Organik", "Bukan logam", "Logam", "Polimer"], answer: "Bukan logam" },
+            { question: "Kekerasan seramik membolehkannya digunakan untuk...", options: ["Membuat belon", "Membuat wayar", "Memotong bahan keras seperti keluli", "Membuat tilam"], answer: "Memotong bahan keras seperti keluli" },
+            { question: "Struktur atom di dalam seramik terdiri daripada...", options: ["Ikatan ionik dan kovalen yang kuat", "Lautan elektron yang bebas bergerak", "Rantai polimer yang panjang", "Atom-atom yang tidak terikat"], answer: "Ikatan ionik dan kovalen yang kuat" },
+            { question: "Manakah antara berikut adalah aplikasi seramik dalam bidang perubatan?", options: ["Stetoskop", "Implan tulang dan sendi", "Termometer merkuri", "Kapas"], answer: "Implan tulang dan sendi" },
+            { question: "Kaca juga dikelaskan sebagai sejenis seramik. Apakah komponen utama kaca?", options: ["Silika (SiO₂)", "Kalsium karbonat (CaCO₃)", "Natrium klorida (NaCl)", "Aluminium oksida (Al₂O₃)"], answer: "Silika (SiO₂)" }
+        ];
+
+        const quizStart = document.getElementById('quiz-start');
+        const quizArea = document.getElementById('quiz-area');
+        const quizResults = document.getElementById('quiz-results');
+        
+        const startBtn = document.getElementById('start-quiz-btn');
+        const retryBtn = document.getElementById('retry-quiz-btn');
+        const nextBtn = document.getElementById('next-question-btn');
+        
+        const questionNumberEl = document.getElementById('question-number');
+        const scoreEl = document.getElementById('score');
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const finalScoreEl = document.getElementById('final-score');
+        const resultMessageEl = document.getElementById('result-message');
+        const feedbackArea = document.getElementById('feedback-area');
+
+        let shuffledQuestions, currentQuestionIndex, score;
+
+        function startQuiz() {
+            quizStart.classList.add('hidden');
+            quizResults.classList.add('hidden');
+            quizArea.classList.remove('hidden');
+            nextBtn.classList.add('hidden');
+
+            shuffledQuestions = shuffleArray([...quizData]);
+            currentQuestionIndex = 0;
+            score = 0;
+            scoreEl.textContent = score;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            const currentQuestion = shuffledQuestions[currentQuestionIndex];
+            questionNumberEl.textContent = currentQuestionIndex + 1;
+            questionTextEl.textContent = currentQuestion.question;
+
+            const shuffledOptions = shuffleArray([...currentQuestion.options]);
+
+            shuffledOptions.forEach(option => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('w-full', 'text-left', 'bg-white', 'p-4', 'rounded-lg', 'border-2', 'border-blue-300', 'hover:bg-blue-100', 'hover:border-blue-500', 'transition-all', 'duration-200', 'text-lg');
+                button.addEventListener('click', selectAnswer);
+                optionsContainer.appendChild(button);
+            });
+        }
+        
+        function resetState() {
+            nextBtn.classList.add('hidden');
+            feedbackArea.innerHTML = '';
+            while (optionsContainer.firstChild) {
+                optionsContainer.removeChild(optionsContainer.firstChild);
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedBtn = e.target;
+            const isCorrect = selectedBtn.innerText === shuffledQuestions[currentQuestionIndex].answer;
+
+            if (isCorrect) {
+                score++;
+                scoreEl.textContent = score;
+                feedbackArea.innerHTML = '<p class="text-green-600 font-bold text-xl">Betul!</p>';
+            } else {
+                feedbackArea.innerHTML = `<p class="text-red-600 font-bold text-xl">Salah. Jawapan yang betul ialah: ${shuffledQuestions[currentQuestionIndex].answer}</p>`;
+            }
+
+            Array.from(optionsContainer.children).forEach(button => {
+                button.disabled = true;
+                if(button.innerText === shuffledQuestions[currentQuestionIndex].answer) {
+                    button.classList.add('bg-green-200', 'border-green-500');
+                } else {
+                     button.classList.add('bg-red-100', 'opacity-60');
+                }
+            });
+            
+            if (shuffledQuestions.length > currentQuestionIndex + 1) {
+                nextBtn.classList.remove('hidden');
+            } else {
+                setTimeout(showResults, 1500);
+            }
+        }
+
+        function showResults() {
+            quizArea.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+            finalScoreEl.textContent = `${score} / ${quizData.length}`;
+            
+            const percentage = (score / quizData.length) * 100;
+            if (percentage >= 80) {
+                resultMessageEl.textContent = "Cemerlang! Anda sangat faham topik ini.";
+                resultMessageEl.className = 'text-xl mt-4 font-semibold text-green-600';
+            } else if (percentage >= 50) {
+                 resultMessageEl.textContent = "Baik! Teruskan usaha untuk lebih cemerlang.";
+                 resultMessageEl.className = 'text-xl mt-4 font-semibold text-blue-600';
+            } else {
+                 resultMessageEl.textContent = "Jangan putus asa! Ulang kaji nota dan cuba lagi.";
+                 resultMessageEl.className = 'text-xl mt-4 font-semibold text-red-600';
+            }
+        }
+
+        startBtn.addEventListener('click', startQuiz);
+        retryBtn.addEventListener('click', startQuiz);
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            showQuestion();
+        });
+
+    </script>
+
+</body>
+</html>
+
