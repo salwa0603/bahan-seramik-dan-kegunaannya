@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nota Interaktif Kimia: Seramik</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -372,6 +373,15 @@
             }
         });
 
+        // Confetti trigger function
+        function triggerConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 90,
+                origin: { y: 0.6 }
+            });
+        }
+
         // Simulasi Logic
         let bahanTerpilih = [];
         const statusSimulasi = document.getElementById('status-simulasi');
@@ -493,6 +503,7 @@
             
             if (selectedBtn.innerText === correctAnswer) {
                 ltFeedback.innerHTML = '<span class="text-green-600">Hebat! Jawapan anda tepat. ✨</span>';
+                triggerConfetti();
             } else {
                 ltFeedback.innerHTML = `<span class="text-red-600">Hampir tepat! Sifat utamanya ialah ${correctAnswer}.</span>`;
             }
@@ -564,6 +575,7 @@
 
             if (correctAnswers.includes(userAnswer)) {
                 tbFeedback.innerHTML = '<span class="text-green-600">Betul! Jawapan yang bijak! 👍</span>';
+                triggerConfetti();
             } else {
                 tbFeedback.innerHTML = `<span class="text-red-600">Jawapan kurang tepat. Jawapan betul ialah: ${correctAnswers[0].charAt(0).toUpperCase() + correctAnswers[0].slice(1)}</span>`;
             }
@@ -676,6 +688,7 @@
                 score++;
                 scoreEl.textContent = score;
                 feedbackArea.innerHTML = '<p class="text-green-600 font-bold text-xl">Betul!</p>';
+                triggerConfetti();
             } else {
                 feedbackArea.innerHTML = `<p class="text-red-600 font-bold text-xl">Salah. Jawapan yang betul ialah: ${shuffledQuestions[currentQuestionIndex].answer}</p>`;
             }
@@ -725,4 +738,5 @@
 
 </body>
 </html>
+
 
